@@ -1,0 +1,81 @@
+# ===================================
+# AI RECRUITMENT SYSTEM - DEPENDENCIES
+# Version 100% GRATUITE (NLP Local)
+# ===================================
+
+# ============ Core Framework ============
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# ============ Database ============
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9
+pymongo==4.6.1
+redis==5.0.1
+
+# ============ Authentication & Security ============
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+
+# ============ NLP & ML (100% GRATUIT) ============
+# spaCy pour l'analyse linguistique
+spacy==3.7.5
+# Télécharger avec: python -m spacy download fr_core_news_md
+
+# Transformers pour BERT et modèles de langage
+#transformers==4.37.0
+#torch==2.1.2
+
+# Sentence-Transformers pour la similarité sémantique
+sentence-transformers==2.3.1
+
+# scikit-learn pour le machine learning classique
+scikit-learn==1.4.0
+
+# NLTK pour le traitement de texte
+nltk==3.8.1
+
+# ============ PDF & Document Processing ============
+pdfplumber==0.10.3
+PyPDF2==3.0.1
+python-docx==1.1.0
+pypandoc==1.12
+
+# ============ Data Processing ============
+pandas==2.2.0
+numpy==1.26.3
+
+# ============ Utilities ============
+pydantic==2.5.3
+pydantic-settings==2.1.0
+requests==2.31.0
+
+# ============ Testing ============
+pytest==7.4.4
+pytest-asyncio==0.23.3
+httpx==0.26.0
+faker==22.6.0
+
+# ============ Code Quality ============
+black==24.1.1
+flake8==7.0.0
+mypy==1.8.0
+
+# ============ Logging & Monitoring ============
+loguru==0.7.2
+
+# ============ Extras pour NLP ============
+# Pour la lemmatisation et stemming avancés
+unidecode==1.3.8
+
+# Pour l'analyse de sentiment (optionnel)
+textblob==0.18.0
+
+# Pour les expressions régulières avancées
+regex==2023.12.25
+# Question Generation
+transformers==4.37.0
+sentencepiece==0.1.99
+protobuf==4.25.2

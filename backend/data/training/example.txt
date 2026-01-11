@@ -1,0 +1,56 @@
+TEXTE:
+Alexandre Moreau
+Architecte Logiciel
+
+EXPÉRIENCE PROFESSIONNELLE
+
+Data Scientist - CloudSystems
+5 années d'expérience professionnelle en MySQL
+Technologies utilisées : Cassandra, Jenkins
+
+Architecte Logiciel - InnovateTech
+Maîtrise de Python depuis 8 ans
+Technologies utilisées : Django, Cassandra, Ruby, Kubernetes
+
+Développeur Frontend - CodeFactory
+Maîtrise de Ansible depuis 7 ans
+Technologies utilisées : Redis, Azure, Go, Kotlin
+
+COMPÉTENCES TECHNIQUES
+
+Expertise en JavaScript, TypeScript, C++, Java, Laravel, Node.js, MySQL, PostgreSQL, Terraform, AWS, Kubernetes, GitLab CI, Jira, IntelliJ, GitHub
+
+FORMATION
+
+Master Informatique - Université Paris (2019)
+
+
+ANNOTATIONS:
+  MySQL [137:142] → SKILL
+  Cassandra [168:177] → SKILL
+  Jenkins [179:186] → SKILL
+  Python [235:241] → SKILL
+  Django [280:286] → SKILL
+  Cassandra [288:297] → SKILL
+  Ruby [299:303] → SKILL
+  Kubernetes [305:315] → SKILL
+  Ansible [364:371] → SKILL
+  Redis [410:415] → SKILL
+  Azure [417:422] → SKILL
+  Go [424:426] → SKILL
+  Kotlin [428:434] → SKILL
+  JavaScript [473:483] → SKILL
+  TypeScript [485:495] → SKILL
+  C++ [497:500] → SKILL
+  Java [502:506] → SKILL
+  Laravel [508:515] → SKILL
+  Node.js [517:524] → SKILL
+  MySQL [526:531] → SKILL
+  PostgreSQL [533:543] → SKILL
+  Terraform [545:554] → SKILL
+  AWS [556:559] → SKILL
+  Kubernetes [561:571] → SKILL
+  GitLab CI [573:582] → SKILL
+  Jira [584:588] → SKILL
+  IntelliJ [590:598] → SKILL
+  GitHub [600:606] → SKILL

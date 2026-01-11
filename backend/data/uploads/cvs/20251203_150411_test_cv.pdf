@@ -1,0 +1,103 @@
+python -m app.main
+```
+
+**Résultat attendu** :
+```
+==================================================
+🚀 DÉMARRAGE DU SYSTÈME DE RECRUTEMENT IA
+==================================================
+✅ Configuration validée
+✅ PostgreSQL connecté
+✅ MongoDB connecté
+✅ Redis connecté
+✅ Base de données PostgreSQL initialisée
+📥 Initialisation du générateur d'annonces...
+✅ spaCy chargé
+  ✓ Template 'general' chargé
+  ✓ Template 'marketing' chargé
+  ✓ Template 'tech' chargé
+✅ 3 templates chargés
+✅ Générateur prêt !
+📄 CVParser initialisé
+🧠 CVExtractor initialisé
+✅ BERT Sentence Transformer chargé
+🎯 CVMatcher initialisé
+📊 CVScorer initialisé
+✅ Module 1 (Générateur d'annonces) initialisé
+✅ Module 3 (Analyse de CV) initialisé
+✅ Application démarrée en mode development
+📝 Documentation disponible sur: http://localhost:8000/docs
+==================================================
+
+INFO:     Uvicorn running on http://0.0.0.0:8000
+INFO:     Application startup complete.
+```
+
+---
+
+## 🎯 VÉRIFIER DANS SWAGGER
+
+Allez sur : **http://localhost:8000/docs**
+
+Vous devriez voir **2 sections** :
+```
+AI Recruitment System
+Version 1.0.0
+
+Sections:
+
+📋 default
+├── GET  /
+├── GET  /health
+└── GET  /config
+
+💼 Jobs
+├── POST   /api/jobs/create
+├── POST   /api/jobs/generate-linkedin
+├── GET    /api/jobs/
+├── GET    /api/jobs/{job_id}
+├── PUT    /api/jobs/{job_id}
+├── DELETE /api/jobs/{job_id}
+└── GET    /api/jobs/{job_id}/linkedin-post
+
+👤 Candidates                    ← NOUVEAU !
+├── POST   /api/candidates/upload-cv
+├── GET    /api/candidates/{id}/analysis
+├── GET    /api/candidates/by-job/{job_id}
+├── GET    /api/candidates/ranking/{job_id}
+├── GET    /api/candidates/{id}
+├── GET    /api/candidates/
+└── DELETE /api/candidates/{id}
+```
+
+---
+
+## 🧪 PREMIER TEST : CRÉER UN CV
+
+### **Option 1 : Créer un PDF rapidement**
+
+Créez un fichier Word avec ce texte :
+```
+JEAN DUPONT
+Développeur Python Senior
+
+Email: jean.dupont@email.com
+Téléphone: 0612345678
+
+EXPÉRIENCE PROFESSIONNELLE
+
+Développeur Senior - TechCorp (2019-2024)
+5 ans d'expérience en développement Python
+
+COMPÉTENCES TECHNIQUES
+
+Python, Django, PostgreSQL, Docker, Git, FastAPI
+
+FORMATION
+
+Master Informatique - Université Paris 2019
+
+LANGUES
+
+Français: Natif
+Anglais: Courant

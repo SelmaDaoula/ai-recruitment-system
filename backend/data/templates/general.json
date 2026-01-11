@@ -1,0 +1,12 @@
+{
+  "sector": "general",
+  "header": "{title} - Opportunité professionnelle",
+  "body": "💼 Le poste\nNous recherchons un(e) {title} motivé(e) pour rejoindre notre équipe.\n\nVous intégrerez une entreprise dynamique où votre expertise sera valorisée.\n\n🎯 Compétences requises\n{skills}\n\n📊 Expérience\n{experience}\n\n📍 Localisation\n{location}\n\n💰 Rémunération\n{salary}",
+  "footer": "📩 Postulez dès maintenant !\n\n#Emploi #Recrutement #Opportunité #Carrière",
+  "emojis": {
+    "title": "💼",
+    "skills": "✓",
+    "location": "📍",
+    "salary": "💰"
+  }
+}

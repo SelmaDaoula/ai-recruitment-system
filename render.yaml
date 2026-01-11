@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ai-recruitment-system
+    runtime: python
+    region: frankfurt
+    plan: free
+    buildCommand: |
+      echo "📦 Installing backend dependencies..."
+      pip install -r backend/requirements.txt
+      echo "🤖 Downloading spaCy model..."
+      python -m spacy download fr_core_news_md
+      echo "🎨 Installing frontend dependencies..."
+      cd frontend
+      npm install
+      echo "🏗️ Building frontend..."
+      npm run build
+      echo "✅ Build complete!"
+      cd ..
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      - key: DATABASE_URL
+        sync: false
+      - key: MONGODB_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"

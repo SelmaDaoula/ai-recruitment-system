@@ -1,0 +1,12 @@
+{
+  "sector": "tech",
+  "header": "{title} - Rejoignez une équipe innovante !",
+  "body": "💼 Le poste\nNous recherchons un(e) {title} passionné(e) pour rejoindre notre équipe {sector}.\n\nVous travaillerez sur des projets techniques challengeants et contribuerez à l'évolution de notre plateforme.\n\n🎯 Compétences requises\n{skills}\n\n📊 Expérience\n{experience}\n\n📍 Localisation\n{location}\n\n💰 Rémunération\n{salary}",
+  "footer": "📩 Intéressé(e) ? Postulez dès maintenant !\n\n#TechJobs #Recrutement #Développeur #Innovation",
+  "emojis": {
+    "title": "🚀",
+    "skills": "✓",
+    "location": "📍",
+    "salary": "💰"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "sector": "marketing",
+  "header": "{title} - Boostez votre carrière dans le marketing !",
+  "body": "🎨 Le poste\nNous recherchons un(e) {title} créatif(ve) et orienté(e) résultats pour dynamiser notre stratégie marketing.\n\nVous serez au cœur de nos campagnes et contribuerez à notre croissance.\n\n🎯 Compétences requises\n{skills}\n\n📊 Expérience\n{experience}\n\n📍 Localisation\n{location}\n\n💰 Rémunération\n{salary}",
+  "footer": "📩 Candidatez maintenant et rejoignez l'aventure !\n\n#Marketing #Recrutement #Digital #Créativité",
+  "emojis": {
+    "title": "🎨",
+    "skills": "✓",
+    "location": "📍",
+    "salary": "💰"
+  }
+}

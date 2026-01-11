@@ -1,0 +1,65 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches: [main, deploy]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      - name: Build and push backend Docker image
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      
+      - name: Build backend image
+        run: |
+          docker build -f backend/Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/recruitment-backend:latest ./backend
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/recruitment-backend:latest
+      
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build
+      
+      - name: Deploy frontend to Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "frontend/dist"
+          api_location: ""
+          output_location: ""
+      
+      - name: Deploy backend to Container Instances
+        run: |
+          az container create \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name recruitment-backend \
+            --image ${{ secrets.REGISTRY_LOGIN_SERVER }}/recruitment-backend:latest \
+            --cpu 1 --memory 1 \
+            --registry-login-server ${{ secrets.REGISTRY_LOGIN_SERVER }} \
+            --registry-username ${{ secrets.REGISTRY_USERNAME }} \
+            --registry-password ${{ secrets.REGISTRY_PASSWORD }} \
+            --environment-variables \
+              DATABASE_URL="${{ secrets.DATABASE_URL }}" \
+              MONGODB_URL="${{ secrets.MONGODB_URL }}" \
+              REDIS_URL="${{ secrets.REDIS_URL }}" \
+              ENVIRONMENT=production \
+              DEBUG=false \
+            --ports 8000 \
+            --protocol TCP

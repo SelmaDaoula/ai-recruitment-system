@@ -1,0 +1,53 @@
+TEXTE:
+Thomas Lambert
+Développeur Full Stack
+
+EXPERIENCE PROFESSIONNELLE
+
+Développeur Backend - CloudSystems
+Maîtrise de FastAPI depuis 6 ans
+Technos : C++, IntelliJ
+
+Data Scientist - TechCorp
+Utilisation de Azure pendant 7 ans
+Technos : Elasticsearch, Terraform
+
+Développeur Backend - TechCorp
+1 années d'expérience professionnelle en Redis
+Technos : Rust, Java, Confluence
+
+COMPETENCES
+
+Technos : C++, TypeScript, Kotlin, JavaScript, Django, Node.js, MySQL, Redis, MongoDB, Jenkins, Terraform, Docker, Ansible, IntelliJ, Confluence
+
+FORMATION
+
+Master Informatique - Universite Paris (2019)
+
+
+ANNOTATIONS:
+  FastAPI [114:121] → SKILL
+  C++ [145:148] → SKILL
+  IntelliJ [150:158] → SKILL
+  Azure [201:206] → SKILL
+  Elasticsearch [231:244] → SKILL
+  Terraform [246:255] → SKILL
+  Redis [329:334] → SKILL
+  Rust [345:349] → SKILL
+  Java [351:355] → SKILL
+  Confluence [357:367] → SKILL
+  C++ [392:395] → SKILL
+  TypeScript [397:407] → SKILL
+  Kotlin [409:415] → SKILL
+  JavaScript [417:427] → SKILL
+  Django [429:435] → SKILL
+  Node.js [437:444] → SKILL
+  MySQL [446:451] → SKILL
+  Redis [453:458] → SKILL
+  MongoDB [460:467] → SKILL
+  Jenkins [469:476] → SKILL
+  Terraform [478:487] → SKILL
+  Docker [489:495] → SKILL
+  Ansible [497:504] → SKILL
+  IntelliJ [506:514] → SKILL
+  Confluence [516:526] → SKILL
