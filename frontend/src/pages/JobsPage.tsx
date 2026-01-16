@@ -9,18 +9,23 @@ export default function JobsPage() {
   const [filterStatus, setFilterStatus] = useState<'all' | 'active' | 'inactive'>('all')
 
   // ✅ CORRECTION : Wrapper avec une arrow function
-  const { data: jobs = [], isLoading } = useQuery({
+  const { data: jobsData = [] } = useQuery({
     queryKey: ['jobs'],
     queryFn: () => jobsApi.getAll(),
   })
 
   // ✅ CORRECTION : Wrapper avec une arrow function
-  const { data: candidates = [] } = useQuery({
+  const { data: candidatesData = [] } = useQuery({
     queryKey: ['candidates'],
     queryFn: () => candidatesApi.getAll(),
   })
 
-  const filteredJobs = jobs.filter((job: any) => {
+  // Gérer les réponses (array ou objet)
+  const jobs = Array.isArray(jobsData) ? jobsData : (jobsData?.data || [])
+  const candidates = Array.isArray(candidatesData) ? candidatesData : (candidatesData?.data || [])
+  const isLoading = false
+
+  const filteredJobs = (Array.isArray(jobs) ? jobs : []).filter((job: any) => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          (job.location || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
                          (job.industry || '').toLowerCase().includes(searchTerm.toLowerCase())

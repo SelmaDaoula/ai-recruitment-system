@@ -139,7 +139,7 @@ export default function LinkedInConnect() {
             >
               <Linkedin className="w-5 h-5" strokeWidth={2.5} />
               {connecting ? 'Connecting...' : 'Connect LinkedIn Account'}
-            </button>
+            </button> 
           )}
         </div>
       </div>

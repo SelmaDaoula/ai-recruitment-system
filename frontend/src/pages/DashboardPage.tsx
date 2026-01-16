@@ -10,15 +10,19 @@ export default function DashboardPage() {
     queryFn: () => statsApi.getGlobalStats(),  // ✅ Arrow function
   })
 
-  const { data: jobs = [], isLoading: jobsLoading } = useQuery({
+  const { data: jobsData = [], isLoading: jobsLoading } = useQuery({
     queryKey: ['jobs'],
     queryFn: () => jobsApi.getAll(),  // ✅ Arrow function
   })
 
-  const { data: candidates = [], isLoading: candidatesLoading } = useQuery({
+  const { data: candidatesData = [], isLoading: candidatesLoading } = useQuery({
     queryKey: ['candidates'],
     queryFn: () => candidatesApi.getAll(),  // ✅ Arrow function
   })
+
+  // Gérer les réponses (array ou objet)
+  const jobs = Array.isArray(jobsData) ? jobsData : (jobsData?.data || [])
+  const candidates = Array.isArray(candidatesData) ? candidatesData : (candidatesData?.data || [])
 
   const isLoading = statsLoading || jobsLoading || candidatesLoading
 
@@ -43,11 +47,10 @@ export default function DashboardPage() {
     { name: 'Poor', value: globalStats?.quality_distribution?.poor || 0, color: '#888888' },
   ]
 
-  // Ensure data are arrays
-  const jobsArray = Array.isArray(jobs) ? jobs : []
-  const candidatesArray = Array.isArray(candidates) ? candidates : []
+  const jobsArray = jobs
+  const candidatesArray = candidates
 
-  const jobsData = jobsArray.slice(0, 6).map((job: any) => ({
+  const jobsChartData = jobsArray.slice(0, 6).map((job: any) => ({
     name: job.title?.substring(0, 12) || 'Job',
     value: candidatesArray.filter((c: any) => c.job_offer_id === job.id).length
   }))
@@ -261,13 +264,13 @@ export default function DashboardPage() {
         >
           <h2 className="text-2xl font-bold mb-6" style={{ color: '#313335' }}>Job Performance</h2>
           <ResponsiveContainer width="100%" height={240}>
-            <BarChart data={jobsData}>
+            <BarChart data={jobsChartData}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(202, 204, 206, 0.3)" />
               <XAxis dataKey="name" stroke="#888888" style={{ fontSize: '12px' }} />
               <YAxis stroke="#888888" style={{ fontSize: '12px' }} />
               <Tooltip />
               <Bar dataKey="value" radius={[10, 10, 0, 0]}>
-                {jobsData.map((entry, index) => (
+                {jobsChartData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#007785' : '#00ACDC'} />
                 ))}
               </Bar>
